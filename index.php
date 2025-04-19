@@ -28,13 +28,14 @@ $conn = LoadDatabaseConnection();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!isset($_POST['submitsearch'])) return;
     if(!isset($_POST['search'])){
+        $conn->close();
         header("Location: ");    
     }
     $searchdata = $_POST['search'];
+    $conn->close();
     header("Location: results?author=$searchdata");
 }
-else if($_SERVER["REQUEST_METHOD"] == "GET"){
-}
+
 
 $conn->close();
 

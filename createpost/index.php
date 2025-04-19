@@ -44,7 +44,6 @@ $author = $_POST['author'];
 $post = $_POST['post'];
 AddPostIntoDatabase($conn, $author, $post);
 $conn->close();
-
 header("Location: result.php?status=0");
 
 
